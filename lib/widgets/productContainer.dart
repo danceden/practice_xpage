@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practice_xpage/models/Product.dart';
+
 class ProductContainer extends StatefulWidget {
   const ProductContainer({Key? key}) : super(key: key);
 
@@ -17,65 +18,82 @@ class _ProductContainerState extends State<ProductContainer> {
         return GestureDetector(
           child: Container(
             constraints: BoxConstraints(maxWidth: 200),
-            margin: EdgeInsets.only(right: i == productList.length - 1 ? 0 : 15.0),
+            margin:
+                EdgeInsets.only(right: i == productList.length - 1 ? 0 : 15.0),
             decoration: BoxDecoration(
-              color: Colors.grey[100],
+              color: Colors.white,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.all(5),
-                  child:
-                  IconButton(
-                      alignment: Alignment.topLeft,
-                      icon: Icon(Icons.favorite_border_outlined),
-                      iconSize: 20,
-                      color: Colors.deepOrangeAccent,
-                      onPressed: () {  },
+                Container(
+                  constraints: BoxConstraints.expand(height: 120),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      image: DecorationImage(
+                          image: AssetImage(productList[i].image),
+                          fit: BoxFit.cover)),
+                  alignment: Alignment.center,
+                  child: Stack(
+                    children: [
+                      Positioned( top: 5, left: 5,
+                          child: IconButton(
+                            icon: Icon(Icons.favorite_border_outlined),
+                            iconSize: 30,
+                            color: Colors.orange,
+                            onPressed: () {},
+                          ),
+                      )
+                    ],
                   ),
                 ),
-                Expanded(
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Hero(
-                        tag: i,
-                        child: Image.network(
-                          "${productList[i].imageUrl}",
-                          fit: BoxFit.contain,
+
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      padding:
+                          const EdgeInsets.only(top: 12, left: 12, bottom: 4),
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        productList[i].title,
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600, fontSize: 15),
+                      ),
+                    ),
+                    Container(
+                      padding:
+                          const EdgeInsets.only(top: 12, left: 12, bottom: 4),
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        "${productList[i].price} руб/кг",
+                        style: TextStyle(
+                            color: Colors.orange, fontWeight: FontWeight.w700),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Center(
+                  child: OutlinedButton(
+                      style: OutlinedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18.0),
+                          side: BorderSide(width: 2, color: Colors.green),
                         ),
                       ),
-                    )
+                      onPressed: () {},
+                      child: Icon(Icons.shopping_basket_outlined,
+                          color: Colors.orange)),
                 ),
-                Padding(
-                  padding: EdgeInsets.all(5),
-                  child:
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            productList[i].title,
-                          ),
-                          Text(
-                            "${productList[i].price}" + " руб/кг",
-                          ),
-                        ],
-                      )
+                SizedBox(
+                  height: 10,
                 ),
-
-                OutlinedButton(
-                  style: OutlinedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(18.0),
-                        side: BorderSide(width: 2, color: Colors.green),
-                      ),
-                  ),
-                    onPressed: () {},
-                    child: Icon(Icons.shopping_basket_outlined, color: Colors.deepOrangeAccent)
-                )
               ],
-
             ),
           ),
         );

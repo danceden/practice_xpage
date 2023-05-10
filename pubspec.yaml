@@ -47,6 +47,8 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
 
+  getwidget: ^2.0.4
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -57,6 +59,42 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  assets:
+    - assets/images/categories/fruits.jpeg
+    - assets/images/categories/vegetables.jpeg
+    - assets/images/stocks/avokado.jpeg
+    - assets/images/stocks/meal.jpeg
+    - assets/images/products/avocado2.jpeg
+    - assets/images/products/strawbery.png
+
+  fonts:
+    - family: Gotham Pro
+      fonts:
+        - asset: fonts/gothampro.ttf
+        - asset: fonts/gothampro_black.ttf
+          weight: 900
+        - asset: fonts/gothampro_blackitalic.ttf
+          style: italic
+          weight: 900
+        - asset: fonts/gothampro_bold.ttf
+          weight: 700
+        - asset: fonts/gothampro_bolditalic.ttf
+          style: italic
+          weight: 700
+        - asset: fonts/gothampro_italic.ttf
+          style: italic
+        - asset: fonts/gothampro_light.ttf
+          weight: 100
+        - asset: fonts/gothampro_lightitalic.ttf
+          style: italic
+          weight: 100
+        - asset: fonts/gothampro_medium.ttf
+          weight: 500
+        - asset: fonts/gothampro_mediumitalic.ttf
+          style: italic
+          weight: 500
+
 
   # To add assets to your application, add an assets section, like this:
   # assets:

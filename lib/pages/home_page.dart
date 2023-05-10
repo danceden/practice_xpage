@@ -17,58 +17,49 @@ class HomePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
+              SizedBox(
+                height: 13,
+              ),
                 Text(
                   "Акции",
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
                 ),
               SizedBox(
                 height: 15,
               ),
               Container(
-                height: 200,
+                height: MediaQuery.of(context).size.height * 0.32,
+                width: MediaQuery.of(context).size.width,
                 child: StockContainer(),
               ),
               SizedBox(
                 height: 15,
               ),
-
-              Container(
-                child:
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text(
-                          'Популярное',
-                          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Text(
-                          'Смотреть все > ',
-                          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300, color: Colors.deepOrangeAccent),
-                        ),
-                      ],
-                    )
-                  ],
-                )
-
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Популярное',
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
+                  ),
+                  TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        'Смотреть все >',
+                        style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14, color: Colors.orange),)
+                  )
+                ],
               ),
-              SizedBox(
-                height: 15,
-              ),
+              // SizedBox(
+              //   height: 15,
+              // ),
               Container(
-                height: 200,
+                height: MediaQuery.of(context).size.height * 0.38,
                 child: ProductContainer(),
               ),
               SizedBox(
-                height: 15,
+                height: 30,
               ),
               Text(
                 "Категории товаров",
@@ -79,23 +70,20 @@ class HomePage extends StatelessWidget {
               ),
               Container(
                 child: CategoryContainer(),
-                height: 200,
+                height: MediaQuery.of(context).size.height,
               ),
-              SizedBox(
-                height: 15,
-              ),
-
             ],
           )
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        unselectedItemColor: Colors.black26,
+        unselectedItemColor: Colors.black54,
         selectedItemColor: Colors.green,
         items: [
           BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              label: 'Главная'
+              label: 'Главная',
+
           ),
           BottomNavigationBarItem(
               icon: Icon(Icons.menu_book),

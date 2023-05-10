@@ -8,23 +8,20 @@ class Product{
   final String price;
   final String description;
   // final Category category;
-  // final bool isFavorite = false;
-  final String imageUrl;
+  final bool isFavorite;
+  final String image;
 
   Product({
     required this.id,
     required this.title,
-    required this.description,
-    // required this.isFavorite,
     required this.price,
-    required this.imageUrl,
+    required this.description,
+    required this.isFavorite,
+    required this.image,
   });
 }
 
 List<Product> productList = [
-  Product(id: '1', title: 'Авокадо', description: "плод", price: "200", imageUrl: "https://fajar.co.id/wp-content/uploads/2019/05/daun-alpukat.jpg"),
-  Product(id: '2', title: 'Апельсин', description: "плод", price: "400", imageUrl: ""),
-  Product(id: '3', title: 'Помидор', description: "плод", price: "150", imageUrl: ""),
-  Product(id: '3', title: 'Помидор', description: "плод", price: "150", imageUrl: ""),
-  Product(id: '3', title: 'Помидор', description: "плод", price: "150", imageUrl: "")
+  Product(id: '1', title: 'Авокадо', description: "плод", isFavorite: false, price: "1234", image: "assets/images/products/avocado2.jpeg"),
+  Product(id: '2', title: 'Клубника', description: "ягода", isFavorite: true, price: "1234", image: "assets/images/products/strawbery.png"),
 ];

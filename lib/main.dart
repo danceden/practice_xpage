@@ -11,7 +11,8 @@ class Shop extends StatelessWidget {
     return MaterialApp(
       title: 'Demo Shop',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blueGrey).copyWith(background: Colors.blue),
+        fontFamily: 'Gotham Pro',
+        scaffoldBackgroundColor: Colors.white70,
         ),
       home: HomePage(),
       );
