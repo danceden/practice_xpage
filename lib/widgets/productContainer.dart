@@ -37,18 +37,19 @@ class _ProductContainerState extends State<ProductContainer> {
                   alignment: Alignment.center,
                   child: Stack(
                     children: [
-                      Positioned( top: 5, left: 5,
-                          child: IconButton(
-                            icon: Icon(Icons.favorite_border_outlined),
-                            iconSize: 30,
-                            color: Colors.orange,
-                            onPressed: () {},
-                          ),
+                      Positioned(
+                        top: 5,
+                        left: 5,
+                        child: IconButton(
+                          icon: Icon(Icons.favorite_border_outlined),
+                          iconSize: 30,
+                          color: Colors.orange,
+                          onPressed: () {},
+                        ),
                       )
                     ],
                   ),
                 ),
-
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,7 +61,7 @@ class _ProductContainerState extends State<ProductContainer> {
                       child: Text(
                         productList[i].title,
                         style: TextStyle(
-                            fontWeight: FontWeight.w600, fontSize: 15),
+                            fontWeight: FontWeight.w500, fontSize: 20),
                       ),
                     ),
                     Container(
@@ -70,7 +71,10 @@ class _ProductContainerState extends State<ProductContainer> {
                       child: Text(
                         "${productList[i].price} руб/кг",
                         style: TextStyle(
-                            color: Colors.orange, fontWeight: FontWeight.w700),
+                            color: Colors.orange,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500
+                        ),
                       ),
                     ),
                   ],

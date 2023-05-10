@@ -61,6 +61,16 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/images/categories/djem.png
+    - assets/images/categories/drinks.jpeg
+    - assets/images/categories/dry_fruits.png
+    - assets/images/categories/frozen.jpeg
+    - assets/images/categories/honey.jpeg
+    - assets/images/categories/nut_pasta.png
+    - assets/images/categories/nuts.jpeg
+    - assets/images/categories/oats.jpeg
+    - assets/images/categories/sugar.jpeg
+    - assets/images/products/banana.jpeg
     - assets/images/categories/fruits.jpeg
     - assets/images/categories/vegetables.jpeg
     - assets/images/stocks/avokado.jpeg

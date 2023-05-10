@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practice_xpage/widgets/categoryContainer.dart';
 import 'package:practice_xpage/widgets/productContainer.dart';
-import 'package:practice_xpage/models/Product.dart';
 import 'package:practice_xpage/widgets/stockContainer.dart';
 
 class HomePage extends StatelessWidget {
@@ -36,7 +35,7 @@ class HomePage extends StatelessWidget {
                 height: 15,
               ),
               Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
@@ -45,17 +44,22 @@ class HomePage extends StatelessWidget {
                   ),
                   TextButton(
                       onPressed: () {},
+                      style: TextButton.styleFrom(
+                        padding: EdgeInsets.zero,
+                        minimumSize: Size(50, 30),
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap
+                      ),
                       child: Text(
                         'Смотреть все >',
-                        style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14, color: Colors.orange),)
+                        style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16, color: Colors.orange),)
                   )
                 ],
               ),
-              // SizedBox(
-              //   height: 15,
-              // ),
+              SizedBox(
+                height: 15,
+              ),
               Container(
-                height: MediaQuery.of(context).size.height * 0.38,
+                height: MediaQuery.of(context).size.height * 0.40,
                 child: ProductContainer(),
               ),
               SizedBox(
