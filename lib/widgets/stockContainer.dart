@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:getwidget/getwidget.dart';
-import 'package:practice_xpage/models/Stock.dart';
+import 'package:practice_xpage/models/Promo.dart';
 class StockContainer extends StatefulWidget {
   const StockContainer({Key? key}) : super(key: key);
 
@@ -14,12 +12,12 @@ class _StockContainerState extends State<StockContainer> {
   Widget build(BuildContext context) {
     return ListView.builder(
       scrollDirection: Axis.horizontal,
-      itemCount: stocksList.length,
+      itemCount: promosList.length,
       itemBuilder: (ctx, i) {
         return GestureDetector(
           child: Container(
-            margin: EdgeInsets.all(10),
-            decoration: BoxDecoration(
+            margin: const EdgeInsets.all(10),
+            decoration: const BoxDecoration(
               color: Colors.white,
             ),
             //elevation: 4,
@@ -31,7 +29,7 @@ class _StockContainerState extends State<StockContainer> {
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.9,
                   height: MediaQuery.of(context).size.height * 0.17,
-                  child: Image.asset(stocksList[i].image,
+                  child: Image.asset(promosList[i].imageLink,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -39,16 +37,16 @@ class _StockContainerState extends State<StockContainer> {
                   padding: const EdgeInsets.only(top: 23, left: 23, bottom: 4),
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    stocksList[i].subTitle,
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w100),
+                    promosList[i].data,
+                    style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w100),
                   ),
                 ),
                 Container(
                   padding: const EdgeInsets.only(top: 10, left: 23, bottom: 16),
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    stocksList[i].title,
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+                    promosList[i].title,
+                    style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
                   ),
                 ),
               ],

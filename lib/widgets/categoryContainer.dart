@@ -11,8 +11,8 @@ class _CategoryContainerState extends State<CategoryContainer> {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-      separatorBuilder: (BuildContext context, int index) => Divider(height: 10),
-      scrollDirection: Axis.vertical,
+      separatorBuilder: (BuildContext context, int index) => const Divider(height: 10),
+      physics: const NeverScrollableScrollPhysics(),
       itemCount: categoryList.length,
       itemBuilder: (ctx, i) {
         return GestureDetector(
@@ -24,7 +24,7 @@ class _CategoryContainerState extends State<CategoryContainer> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  constraints: BoxConstraints.expand(height: 50),
+                  constraints: const BoxConstraints.expand(height: 60),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       image: DecorationImage(
@@ -34,10 +34,10 @@ class _CategoryContainerState extends State<CategoryContainer> {
                   child: Stack(
                     children: [
                       Align(
-                        alignment: Alignment(-0.9, 0),
+                        alignment: const Alignment(-0.9, 0),
                         child: Text(
                           categoryList[i].name,
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
                         ),
                       )
                     ],

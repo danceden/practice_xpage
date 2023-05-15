@@ -17,10 +17,10 @@ class _ProductContainerState extends State<ProductContainer> {
       itemBuilder: (ctx, i) {
         return GestureDetector(
           child: Container(
-            constraints: BoxConstraints(maxWidth: 200),
+            constraints: const BoxConstraints(maxWidth: 200),
             margin:
                 EdgeInsets.only(right: i == productList.length - 1 ? 0 : 15.0),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.white,
             ),
             child: Column(
@@ -28,7 +28,7 @@ class _ProductContainerState extends State<ProductContainer> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Container(
-                  constraints: BoxConstraints.expand(height: 120),
+                  constraints: const BoxConstraints.expand(height: 120),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       image: DecorationImage(
@@ -41,7 +41,7 @@ class _ProductContainerState extends State<ProductContainer> {
                         top: 5,
                         left: 5,
                         child: IconButton(
-                          icon: Icon(Icons.favorite_border_outlined),
+                          icon: const Icon(Icons.favorite_border_outlined),
                           iconSize: 30,
                           color: Colors.orange,
                           onPressed: () {},
@@ -60,7 +60,7 @@ class _ProductContainerState extends State<ProductContainer> {
                       alignment: Alignment.centerLeft,
                       child: Text(
                         productList[i].title,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontWeight: FontWeight.w500, fontSize: 20),
                       ),
                     ),
@@ -70,7 +70,7 @@ class _ProductContainerState extends State<ProductContainer> {
                       alignment: Alignment.centerLeft,
                       child: Text(
                         "${productList[i].price} руб/кг",
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: Colors.orange,
                             fontSize: 20,
                             fontWeight: FontWeight.w500
@@ -79,7 +79,7 @@ class _ProductContainerState extends State<ProductContainer> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Center(
@@ -87,14 +87,14 @@ class _ProductContainerState extends State<ProductContainer> {
                       style: OutlinedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18.0),
-                          side: BorderSide(width: 2, color: Colors.green),
+                          side: const BorderSide(width: 2, color: Colors.green),
                         ),
                       ),
                       onPressed: () {},
-                      child: Icon(Icons.shopping_basket_outlined,
+                      child: const Icon(Icons.shopping_basket_outlined,
                           color: Colors.orange)),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
               ],
