@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:practice_xpage/widgets/categoryContainer.dart';
-import 'package:practice_xpage/widgets/productContainer.dart';
-import 'package:practice_xpage/widgets/stockContainer.dart';
+import 'package:practice_xpage/widgets/catalogContainer.dart';
+import 'package:practice_xpage/widgets/popularContainer.dart';
+import 'package:practice_xpage/widgets/promoContainer.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -29,7 +29,7 @@ class HomePage extends StatelessWidget {
               Container(
                 height: MediaQuery.of(context).size.height * 0.32,
                 width: MediaQuery.of(context).size.width,
-                child: StockContainer(),
+                child: PromoContainer(),
               ),
               SizedBox(
                 height: 15,
@@ -59,8 +59,8 @@ class HomePage extends StatelessWidget {
                 height: 15,
               ),
               Container(
-                height: MediaQuery.of(context).size.height * 0.40,
-                child: ProductContainer(),
+                height: MediaQuery.of(context).size.height * 0.45,
+                child: PopularContainer(),
               ),
               SizedBox(
                 height: 30,
@@ -73,7 +73,7 @@ class HomePage extends StatelessWidget {
                 height: 15,
               ),
               Container(
-                child: CategoryContainer(),
+                child: CatalogContainer(),
                 height: MediaQuery.of(context).size.height,
               ),
             ],

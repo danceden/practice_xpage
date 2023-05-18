@@ -1,10 +1,11 @@
 import 'package:json_annotation/json_annotation.dart';
 
+part 'Promo.g.dart';
 
 @JsonSerializable()
 class Promo{
   @JsonKey(name : 'id')
-  final String id;
+  final int id;
   @JsonKey(name : 'title')
   final String title;
   @JsonKey(name : 'data')
@@ -18,9 +19,8 @@ class Promo{
       this.data,
       this.imageLink
       );
-}
 
-List<Promo> promosList = [
-  Promo("1", "Больше — выгодней", "c 18 февраля по 16 марта", "assets/images/stocks/meal.jpeg"),
-  Promo("2", "Больше — выгодней", "c 18 февраля по 16 марта", "assets/images/stocks/avokado.jpeg"),
-];
+  factory Promo.fromJson(Map<String, dynamic> json) => _$PromoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$PromoToJson(this);
+}
